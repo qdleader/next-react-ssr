@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import Footer from '@/components/footer'
-import  Router  from 'next/router'
+import Router from 'next/router'
+import { Button } from 'antd'
+
 
 const Home = () => {
 
@@ -41,6 +43,7 @@ const Home = () => {
       <div><Link href="/pageDetail">详情页</Link></div>
       <div><Link href="#pageDetail">详情页哈希</Link></div>
       <div onClick={goDetail}>去详情页面</div>
+      <Button>我是按钮</Button>
       <Footer></Footer>
     </>
   )
