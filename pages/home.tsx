@@ -39,7 +39,7 @@ const Home = () => {
   }
   return (
     <>
-      <div>我是首页</div>
+      <div>我是home首页</div>
       <div><Link href="/pageDetail">详情页</Link></div>
       <div><Link href="#pageDetail">详情页哈希</Link></div>
       <div onClick={goDetail}>去详情页面</div>
