@@ -1,40 +1,143 @@
-/* 背景改变轮播图 */
-.container {
+body {
+	background-color: #000;
+	margin: 0;
+}
+.top-box {
+	height: 3000px;
+}
+
+#A13 .chip {
+	fill: #fff;
+}
+
+#A13 .text-bg {
+	fill: #fff;
+}
+
+#A13 .chip-mask {
+	fill: #000;
+}
+
+#chip-section {
+	position: sticky;
+	top: 0;
 	width: 100%;
 	height: 100vh;
-	/* margin: 50px auto 0; */
 	overflow: hidden;
-	position: relative;
 }
-.container .img-box {
+
+video {
+	height: 100vh;
+	width: auto;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+#the-chip {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
+	box-shadow: 0px 0px 0px 100vw black, 0px 0px 0px 30px black inset;
+	z-index: 10;
+	min-width: 100px;
+	min-height: 100px;
+	background-color: #000;
+}
+
+#the-chip.transparent {
+	background-color: transparent;
+}
+
+#A13 {
+	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-size: 100%;
-	background-image: url("/2.jpeg");
+	opacity: 0;
 }
 
-.container .img-box {
-	animation-name: changeBG;
-	animation-duration: 20s;
-	animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-	animation-iteration-count: infinite;
-	animation-delay: 5s;
+h1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+	z-index: 20;
+	font-family: Helvetica;
+	font-size: 64px;
+	letter-spacing: -1px;
+	text-align: center;
+	width: 100%;
+	top: 50%;
+	transform: translate(0, -50%);
+	margin: 0;
 }
 
-@keyframes changeBG {
-	0% {
-		background-image: url("/1.jpeg");
+/* 文案 */
+
+.concat-us {
+	display: block;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.concat-text {
+	text-align: center;
+	/* margin: 200px auto; */
+	font-size: 4.5rem;
+	font-family: arial;
+	font-weight: 900;
+	color: transparent;
+	overflow: hidden;
+	-webkit-text-stroke: 4px white;
+	background: linear-gradient(45deg, black 30%, transparent 30%, transparent 70%, black 70%),
+		linear-gradient(-45deg, black 30%, transparent 30%, transparent 70%, black 70%),
+		linear-gradient(90deg, rgb(140, 250, 50) 30%, transparent 30%, transparent 70%, rgb(140, 250, 50) 70%) rgb(243, 51, 128);
+	background-size: 20px 20px, 20px 20px, 1px 1px;
+	background-position: 0 0, 0 0, 0 0;
+	-webkit-background-clip: text;
+	filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 1px black)
+		drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 2px rgb(140, 250, 50));
+	animation: bg-shift 1s ease-in-out infinite alternate-reverse, swing 2s ease-in-out infinite;
+}
+@keyframes bg-shift {
+	from {
+		background-position: 0 50px;
 	}
-	25% {
-		background-image: url("/2.jpeg");
+}
+@keyframes swing {
+	0% {
+		transform-origin: top;
+		transform: perspective(550px) rotatex(55deg);
 	}
 	50% {
-		background-image: url("/3.jpeg");
-	}
-	75% {
-		background-image: url("/4.jpeg");
+		transform: perspective(550px) rotatex(-55deg);
 	}
 	100% {
-		background-image: url("/2.jpeg");
+		transform-origin: top;
+		transform: perspective(550px) rotatex(55deg);
+	}
+}
+.concat-text::before {
+	content: "Concat Us";
+	position: absolute;
+	background: linear-gradient(transparent 30%, white, transparent 70%);
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 2px red;
+	animation: bg-shift2 2s ease-in-out infinite alternate-reverse;
+}
+@keyframes bg-shift2 {
+	0% {
+		background-position: 0 50px;
+	}
+	50% {
+		background-position: 0 -50px;
+	}
+	100% {
+		background-position: 0 50px;
 	}
 }
