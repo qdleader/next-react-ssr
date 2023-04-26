@@ -1,0 +1,89 @@
+.container {
+	position: relative;
+
+	overflow: hidden;
+
+	width: 1100px;
+	height: 340px;
+	margin: 45vh auto 10vh;
+}
+
+.official {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.officialBox {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	animation: scroll 50s linear infinite;
+}
+
+.container::before {
+	content: "";
+
+	position: absolute;
+	z-index: 2;
+	top: -10px;
+	left: -15px;
+
+	width: 100px;
+	height: 350px;
+
+	background-image: linear-gradient(to right, #000000 20%, rgb(235 237 240 / 0%));
+}
+
+.container::after {
+	content: "";
+
+	position: absolute;
+	z-index: 2;
+	top: -10px;
+	right: -15px;
+
+	width: 100px;
+	height: 350px;
+
+	background-image: linear-gradient(to left, #000 20%, rgb(235 237 240 / 0%));
+}
+
+/* 中间行使用 slow 类名，设置速度变慢 */
+.officialBox.slow {
+	animation-duration: 80s;
+}
+
+.officialBoxItem {
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-right: 16px;
+	padding: 20px 40px;
+
+	white-space: nowrap;
+
+	background-color: rgba($color: #fff, $alpha: 0.3);
+	border-radius: 8px;
+
+	transition: all 0.3s ease-in-out;
+	color: #fff;
+}
+
+/* 鼠标悬停时，停止所在行的滚动 */
+.official:hover .officialBox {
+	animation-play-state: paused;
+}
+
+/* 定义滚动动画 */
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}

@@ -4,6 +4,7 @@ import Footer from "@/components/footer"
 import Router from "next/router"
 import { Button } from "antd"
 import styles from "../styles/index.module.scss"
+import PartnerCard from "@/components/partnerCard"
 
 const Home = () => {
 	Router.events.on("routeChangeStart", (...args) => {
@@ -125,11 +126,13 @@ const Home = () => {
       <div onClick={goDetail}>去详情页面</div>
       <Button>我是按钮</Button> */}
 			</div>
+			<PartnerCard></PartnerCard>
 			<div className="concat-us">
 				<a href="https://github.com/qdleader/qdleader" target="_blank" rel="noopener noreferrer">
 					<div className="concat-text">Concat Us</div>
 				</a>
 			</div>
+
 			<Footer></Footer>
 		</div>
 	)
