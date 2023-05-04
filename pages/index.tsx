@@ -64,10 +64,9 @@ const Home = () => {
 
 			if (scrolled >= 0.75) {
 				$theChip.style.opacity = (1 - scrolled) / 0.5 + ""
+			} else if (scrolled >= 0.99) {
+				$theChip.style.opacity = 1 + ""
 			}
-			// else if (scrolled >= 0.99) {
-			//   $theChip.style.opacity = 1
-			// }
 		})
 	}
 
