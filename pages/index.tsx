@@ -119,11 +119,6 @@ const Home = () => {
 						</svg>
 					</div>
 				</section>
-
-				{/* <div><Link href="/pageDetail">详情页</Link></div>
-      <div><Link href="#pageDetail">详情页哈希</Link></div>
-      <div onClick={goDetail}>去详情页面</div>
-      <Button>我是按钮</Button> */}
 			</div>
 			<PartnerCard></PartnerCard>
 			<div className="concat-us">
