@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Features
+
+- 🎯 **Interactive Text Links**: All text elements throughout the project are clickable and link to the [QDLeader Frontend Knowledge Base](https://qdleader.github.io/qdleader/)
+- ⚡ **Optimized Performance**: Scroll listeners use `requestAnimationFrame` for smooth animations
+- 🧹 **Clean Code**: Improved code structure with TypeScript interfaces, proper event cleanup, and reusable components
+- 🎨 **Modern UI**: Beautiful scroll animations with React logo and smooth transitions
+
 ## Getting Started
 
 First, run the development server:
